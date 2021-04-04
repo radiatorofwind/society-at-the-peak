@@ -17,7 +17,7 @@ async def on_ready():
     print("Society is at it's peak. All going down from here.")
 @client.command(name="reload",description="Reloads extension.")
 async def reload(ctx,content):
-    if not content in extensions:
+    if content not in extensions:
         await ctx.send(f"Extension not found. Here are a list of extensions:\n{extensions}")
     else:
         await ctx.send(f"Reloading extension {content}...")
