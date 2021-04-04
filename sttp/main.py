@@ -5,11 +5,11 @@ from discord_slash import SlashCommand, SlashContext
 import asyncio
 import json
 with open("config.json","r") as cfg:
-    content = cfg.read()
-    print(content)
-prefix = "sttp"
+    cont = cfg.read()
+    jso = json.loads(cont)
+    token = jso["token"]
+    prefix = jso["prefix"]
 extensions = ["cogs.simplechat"]
-token = "ODI2NTU4NjEwMzY3OTcxMzU4.YGOOsQ.eL4yvcFlLuJHd5qrJ05Vcd9LYuE"
 client = commands.Bot(command_prefix=prefix)
 # On ready
 @client.event
