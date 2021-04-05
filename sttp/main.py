@@ -1,7 +1,6 @@
 import discord
 from discord.ext import commands, tasks
 from discord.ext.commands import Cog
-from discord_slash import SlashCommand, SlashContext
 import asyncio
 import json
 with open("config.json","r") as cfg:
@@ -15,6 +14,7 @@ client = commands.Bot(command_prefix=prefix)
 @client.event
 async def on_ready():
     print("Society is at it's peak. All going down from here.")
+    await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching,name="society's downfall"))
 @client.command(name="reload",description="Reloads extension.")
 async def reload(ctx,content):
     if content not in extensions:
@@ -22,6 +22,7 @@ async def reload(ctx,content):
     else:
         await ctx.send(f"Reloading extension {content}...")
         client.reload_extension(content)
+        await ctx.send(f"Reloaded extension {content}. May have failed; check the logs!")
 if __name__ == "__main__":
     for extension in extensions:
         client.load_extension(extension)
