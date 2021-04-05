@@ -15,3 +15,7 @@ No one right now; we are making it for ourselves as practice. If we discover thi
 ## Sweet. What else is planned?
 
 We aren't sure after the website. Both bots intend to use Discord's brand new slash commands, though after that it could be anything.
+
+## Yo I can add things here?
+
+Right adding on to Radiator's answers, I was thinking we could perhaps make it into a real app that you could download... that would be cool... Also STTP might adapt a more civilized and classy personality due to the fact that it is supposed to represent the peak abilities of our society. Also this project right now is to fuel Radiator and my ego. We are currently listening to music that helps that. 
