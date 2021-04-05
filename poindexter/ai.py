@@ -1,12 +1,13 @@
 import discord
+import json
 from discord.ext import commands
 from prsaw import RandomStuff
-
+with open("config.json","r") as file:
+    cntnt = file.read()
+    jso = json.loads(cntnt)
+    token = jso["token"]
 bot = commands.Bot(command_prefix=">")
 rs = RandomStuff(async_mode = True)
-
-token = "ODI2NTYzODA1NzE4NTExNjM2.YGOTiA.26hu-M644kZNJ0MU4PwDZxLtAN8"
-
 @bot.event
 async def on_message(message):
     if bot.user == message.author:
@@ -15,5 +16,4 @@ async def on_message(message):
         response = await rs.get_ai_response(message.content)
         await message.channel.send(response)
     await bot.process_commands(message)
-
 bot.run(token)
