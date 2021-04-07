@@ -13,17 +13,21 @@ client = commands.Bot(command_prefix=prefix)
 # On ready
 @client.event
 async def on_ready():
-    print("Society is at it's peak. All going down from here.")
+    print("Society is at it's peak. All going down from here.ence")
+    # Set presence
     await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching,name="society's downfall"))
 @client.command(name="reload",description="Reloads extension.")
 async def reload(ctx,content):
+    # checks if the entered extension is a valid extension
     if content not in extensions:
         await ctx.send(f"Extension not found. Here are a list of extensions:\n{extensions}")
     else:
+        # if it is valid then reload.
         await ctx.send(f"Reloading extension {content}...")
         client.reload_extension(content)
         await ctx.send(f"Reloaded extension {content}. May have failed; check the logs!")
 if __name__ == "__main__":
+    # load extensions on startup
     for extension in extensions:
         client.load_extension(extension)
 else:

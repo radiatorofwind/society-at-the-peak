@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="admin/admincss.css">
+  <script src="admin/adminjs.js"></script>
+<body>
+  <h1 id="admindashboard" class="headers">Admin Dashboard</h1>
+  <button id="pbutton" class="but pbuts"  onclick="document.getElementById('ppanel').style.visibility='visible';">Poindexter</button>
+  <button id="sttpbutton" class="but sttpbuts" onclick="document.getElementById('sttppanel').style.visibility='visible';">STTP</button>
+  <div id="ppanel" class="panel">
+    <h1 class="headers">Poindexter Admin Panel</h1>
+    <button id="pback" class="but pbuts bbuts" onclick="document.getElementById('ppanel').style.visibility='hidden';">Back</button>
+  </div>
+  <div id="sttppanel" class="panel">
+    <h1 class="headers">STTP Admin Panel</h1>
+    <button id="sttpback" class="but sttpbuts bbuts" onclick="document.getElementById('sttppanel').style.visibility='hidden';">Back</button>
+  </div>
+</body>
+</html>

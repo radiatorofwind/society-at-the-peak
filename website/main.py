@@ -1,4 +1,4 @@
-from flask import Flask, redirect, url_for
+from flask import Flask, render_template, redirect
 import json
 app = Flask(__name__)
 with open("config.json","r") as file:
@@ -10,6 +10,9 @@ def home():
     return "<h1>Hey!</h1>\nWelcome to the site!<br>There's nothing here right now. Maybe you should check back later?"
 @app.route(f"/{adminpass}")
 def admin():
-    return "Secret ;)"
+    return render_template("admin.html")
+@app.route(f"/{adminpass}/poindexter")
+def poindexter():
+    return
 if __name__ == "__main__":
     app.run()
